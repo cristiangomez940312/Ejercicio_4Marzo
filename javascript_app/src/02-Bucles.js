@@ -29,11 +29,11 @@ console.log('Total: '+Acum);
 
 console.log('+----------Bucle: For----------+');
 
-let limitefor = 20;
+let limitefor = 10;
 
 for (let index = 0; index < limitefor; index++) {
     let randomfor = Number.parseInt((Math.random() *10),10);
-    console.log('Indice for: '+index);
+    console.log('Conteo: '+index);
     console.log('Random: '+randomfor);
     
 }
