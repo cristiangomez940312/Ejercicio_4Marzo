@@ -1,39 +1,73 @@
-console.log('+----------------Bucles--------------+');
+console.log('+----------------Objetos--------------+');
 
-let limiteBucle = 10;
-let Contador =0;
+const persona = {
+    nombre: 'Cristian',
+    apellidoPatreno: 'Gomez',
+    apellidoMaterno: 'Parra',
+    fechaNacimiento: '994-03-12',
+    direccion: {
+        viaPrincipal: 'Calle',
+        numeroVia: '53',
+        nombreVia: 'San Cristobal',
+        placa: '12A-55',
+        barrio: 'Libertadores',
+        locacion: 'Sur Oriente',
+        Amigos:{
+            uno: 'Sisas',
+            dos: 'Nocas',
+            tres: 'lalala'
+        }
+    }
+};
 
-console.log('+----------Bucle: Do While----------+');
-do {
-    Contador++;
-    console.log('Contador:'+Contador);
-} while (Contador < limiteBucle);
+console.table(persona);
 
-console.log('+----------Bucle: While----------+');
-let letCondicion = true;
-let Con2 =0;
-let Acum =0;
+let otrapersona01 = {...persona}
 
-while (letCondicion) {
-    let letRandom = Math.random() *10; 
-    console.log('Numero Randomico: '+letRandom);
-    if (letRandom > 5){
-        letCondicion = false;
-        console.log('Salida del Bucle: '+letCondicion);
-           }
-           Acum=Acum+letRandom;
-           Con2++;
-   }
-console.log('#Bucles: '+Con2);  
-console.log('Total: '+Acum);  
+otrapersona01.nombre = 'Loco'
+otrapersona01.apellidoMaterno = 'Locancio'
+otrapersona01.fechanacimiento = '2015-02-54'
 
-console.log('+----------Bucle: For----------+');
+console.log('+...........................+');
+console.table(persona);
+console.table(otrapersona01);
 
-let limitefor = 20;
+console.log('+----------------Objetos Dinamicos--------------+');
 
-for (let index = 0; index < limitefor; index++) {
-    let randomfor = Number.parseInt((Math.random() *10),10);
-    console.log('Indice for: '+index);
-    console.log('Random: '+randomfor);
-    
+const personaDinamica = {
+    nombre: 'Cristian',
+    apellidoPatreno: 'Gomez',
+    apellidoMaterno: 'Parra',
+    fechaNacimiento: '994-03-12',
+    direccion: {
+        viaPrincipal: 'Calle',
+        numeroVia: '53',
+        nombreVia: 'San Cristobal',
+        placa: '12A-55',
+        barrio: 'Libertadores',
+        locacion: 'Sur Oriente',
+        Amigos:{
+            uno: 'Carlos',
+            dos: 'Lupita',
+            tres: 'Pepito'
+        }
+    },
+fxNombreCompleto(){
+    console.log(`Mi nombre es ${this.nombre} ${this.apellidoPaterno} ${this.apellidoMaterno}`);
+},
+fxTabularAtributos(){
+    console.table(this);
 }
+};
+
+let obj =(personaDinamica);
+
+obj.nombre = 'LAURA'
+obj.apellidoPaterno = 'SIERRA'
+obj.fxNombreCompleto();
+obj.fxTabularAtributos();
+
+console.table(obj);
+
+console.log('+...............FIN PROGRAMA............+');
+
