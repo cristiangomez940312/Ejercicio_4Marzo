@@ -15,6 +15,7 @@ function Primo(numero){
     while (aux <= numero) {
         if (numero % aux == 0) {
             cont ++;
+            
         }
         aux ++;
     }
